@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="header">
+        <img class= "logo"src="/image/logominha.jpg" alt="">
+        <nav id="nav">
+          <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">Menu
+            <span id="hamburger"></span>
+          </button>
+          <ul id="menu" role="menu">
+            <li><a href="/">Início</a></li>
+            <li><a href="/portifolio">Portfólio</a></li>
+            <li><a href="/contato">Contatos</a></li>
+          </ul>
+        </nav>
+      </header>
+    <main>
+        <div class="nome">
+            <p>Contatos</p>
+        </div>
+            <div class="minhafot1">
+                <picture>
+                    <source media="(min-width:800px)" srcset="/image/96298784.png" type="image/jpg">
+                      <img class="minhafoto1" src="/image/96298784mini.png">
+                    </picture>
+            </div>
+        <div>
+            <div class="midi1">
+                <a href="https://www.linkedin.com/in/valderidouglas/" target="_blank"><img class="midia1" src="/image/midia1.png"></a>
+                <a href="https://github.com/ValderiDouglas" target="_blank"><img class="midia1" src="/image/midia2.png"></a>
+                <a href="https://www.instagram.com/valderimenor/" target="_blank"><img class="midia1"
+                        src="/image/midia3.png"></a>
+            </div>
+        </div>
+    </main>
+    <script>
+        const btnMobile = document.getElementById('btn-mobile');
+
+        function toggleMenu(event) {
+            if (event.type === 'touchstart') event.preventDefault();
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+            const active = nav.classList.contains('active');
+            event.currentTarget.setAttribute('aria-expanded', active);
+            if (active) {
+                event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+            } else {
+                event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+            }
+        }
+
+        btnMobile.addEventListener('click', toggleMenu);
+        btnMobile.addEventListener('touchstart', toggleMenu);
+    </script>
+</body>
+
+</html>

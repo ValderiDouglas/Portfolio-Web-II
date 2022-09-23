@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <header id="header">
+    <img class="logo" src="/image/logominha.jpg" alt="">
+    <nav id="nav">
+      <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu"
+        aria-expanded="false">Menu
+        <span id="hamburger"></span>
+      </button>
+      <ul id="menu" role="menu">
+        <li><a href="/">Início</a></li>
+        <li><a href="/portifolio">Portfólio</a></li>
+        <li><a href="/contato">Contatos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="nome">
+      <p> Valderi Douglas Camargo Queiroz Ferreira</p>
+    </div>
+    <div class="apresentacao">
+      <div class="minhafot">
+      <picture>
+      <source media="(min-width:800px)" srcset="/image/96298784.png" type="image/jpg">
+        <img class="minhafoto" src="/image/96298784mini.png">
+      </picture>
+    </div>
+      <div class="border1">
+        <h1 class="foo">História de Carreira</h1>
+        <P>
+          O mundo dos jogos foi sua porta de entrada para área de programação, participou de cursos públicos de
+          Programação de jogos de plataforma na ferramenta Construct 2 e curso de Robótica, em seu ensino fundamental
+          participou do projeto de sua escola pública EMEF Professora Maria Aparecida dos Santos Ronconi no evento
+
+          Empreende Startups Educacionais 2018, atuando como desenvolvedor de um aplicativo móvel com a ferramenta MIT
+          App Inventor, com essa base de conhecimentos da área de programação decide cursar em 2019 seu ensino médio
+          integrado ao técnico na Etec Profª Ilza Nascimento Pintus, escolhendo o curso de Desenvolvimento de Sistemas,
+
+          tendo contato com muitos conhecimentos como Design Digital, Python, HTML, CSS, SQL, C++, JAVA, JAVASCRIPT,
+          REACT-Native. Para sua conclusão de curso desenvolveu em grupo um jogo 3D educativo de exploração e
+          aprendizagem
+          sobre a fauna e flora da Amazônia, aprendendo Unity, Blender, Mixamo.
+        </P>
+      </div>
+      </div>
+      <div class="border2">
+        <h1 class="foo">Planos futuros</h1>
+        <P>
+          Continuando seus estudos na instituição Fatec São José dos Campos - Prof. Jessen Vidal, no curso
+          Desenvolvimento
+          de Software Multiplataforma, desenvolvendo trabalhos com método scrum no API(Aprendizagem por Projeto
+          Integrador), para crescer sua base de conhecimento, está estudando novas tecnologias, como, python,JavaScript
+          e
+          inglês.
+        </P>
+      </div>
+
+
+  </main>
+  <script>
+    const btnMobile = document.getElementById('btn-mobile');
+
+    function toggleMenu(event) {
+      if (event.type === 'touchstart') event.preventDefault();
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+      const active = nav.classList.contains('active');
+      event.currentTarget.setAttribute('aria-expanded', active);
+      if (active) {
+        event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+      } else {
+        event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+      }
+    }
+
+    btnMobile.addEventListener('click', toggleMenu);
+    btnMobile.addEventListener('touchstart', toggleMenu);
+  </script>
+
+</body>
+
+</html>

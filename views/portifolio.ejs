@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header id="header">
+        <img class= "logo"src="/image/logominha.jpg" alt="">
+        <nav id="nav">
+            <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu"
+                aria-expanded="false">Menu
+                <span id="hamburger"></span>
+            </button>
+            <ul id="menu" role="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/portifolio">Portfólio</a></li>
+                <li><a href="/contato">Contatos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <div class="nome">
+        <p>Projetos</p>
+      </div>
+        <div class="tcc">
+            <div class="proj1fot">
+                <a href="https://github.com/wallacefelipe21/BIO-TCC" target="_blank"><picture>
+                    <source class="proj1foto" media="(min-width:800px)" srcset="/image/projeto1.png" type="image/png">
+                      <img class="proj1foto" src="/image/projeto1mini.png">
+                    </picture></a>
+            </div>
+            <div class="border3">
+                <h1 class="foo">Bio-TCC</h1>
+                <p>
+                    Bio é um jogo de exploração 3D educacional e de conscientização sobre fauna e flora, a história se
+                    passa na Amazônia onde nossa personagem deve ajudar a comunidade em missões ambientais, como coleta
+                    de lixo, plantações, observação de animais silvestres.
+                </p>
+            </div>
+        </div>
+        <div class="tcc">
+            <div class="proj2fot">
+                <picture>
+                    <source class="proj2foto" media="(min-width:800px)" srcset="/image/projeto2.png" type="image/png">
+                      <img class="proj2foto" src="/image/projeto2mini.png">
+                    </picture>
+            </div>
+            <div class="border3">
+                <h1 class="foo">Arte Digital</h1>
+                <p>
+                    Projeto que me empenhei em produzir um anúncio para uma colega, sobre vendas de salgados fritos e
+                    congelados, usando a ferramenta photoshop e elementos gráficos disponíveis gratuitamente na internet
+                    em plataformas e comunidades.
+                </p>
+            </div>
+        </div>
+        <div class="tcc">
+            <div class="proj3fot">
+                <a href="https://github.com/404-BIS/Sistema-Gestao-Servicos" target="_blank"><picture>
+                    <source class="proj3foto" media="(min-width:800px)" srcset="/image/projeto3.png" type="image/png">
+                      <img class="proj3foto" src="/image/projeto3mini.png">
+                    </picture></a>
+            </div>
+            <div class="border3">
+                <h1 class="foo">API-Fatec</h1>
+                <p>
+                    Para esse primeiro semestre de 2022 precisaremos produzir uma página web, ela será uma plataforma de
+                    terceirização de serviços para manutenção e resolução de problemas de hardware e/ou software. Para
+                    controlar as funções e informações no back-end usamos as tecnologias Python, Flask e MySQL, já para
+                    fazer todo o design e estilização no front-end foi utilizado HTML, CSS e JavaScript.
+                </p>
+            </div>
+        </div>
+    </main>
+    <script>
+        const btnMobile = document.getElementById('btn-mobile');
+
+        function toggleMenu(event) {
+            if (event.type === 'touchstart') event.preventDefault();
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+            const active = nav.classList.contains('active');
+            event.currentTarget.setAttribute('aria-expanded', active);
+            if (active) {
+                event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+            } else {
+                event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+            }
+        }
+
+        btnMobile.addEventListener('click', toggleMenu);
+        btnMobile.addEventListener('touchstart', toggleMenu);
+    </script>
+</body>
+
+</html>
